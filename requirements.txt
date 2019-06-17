@@ -1,0 +1,15 @@
+arrow==0.14.2
+certifi==2019.3.9
+chardet==3.0.4
+Django==2.2.2
+django-paypal==1.0.0
+django-widget-tweaks==1.4.5
+idna==2.8
+pagseguro==0.3.4
+python-dateutil==2.8.0
+pytz==2019.1
+requests==2.22.0
+six==1.12.0
+sqlparse==0.3.0
+urllib3==1.25.3
+xmltodict==0.12.0

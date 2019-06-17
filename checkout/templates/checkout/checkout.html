@@ -1,0 +1,59 @@
+{% extends 'index.html'%}
+
+{%block bodyblock%}
+<br>
+<br>
+    <div class="container margin-top">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'index' %}">Início</a></li>
+          <li><a href="{% url 'checkout:cart_item' %}">Carrinho de Compras</a></li>
+          <li class="active">Finalizar Compra</li>
+        </ol>
+        <div class="page-header">
+			<h1>Escolha a forma de pagamento</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Pedido #{{order.pk}}</p>
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <a href="#" class="btn btn-success">Pagar via depósito</a>
+				</div>
+            <div class="col-md-4">
+                <a href="{% url 'checkout:paypal_view' order.pk %}" class="btn btn-success">Pagar com PayPal</a>
+				</div>
+<!--                <form class="form-horizontal">-->
+<!--    				<fieldset>-->
+<!--    				    <div class="form-group">-->
+<!--    				      <label for="id_name" class="col-md-3 control-label">Apelido para o Endereço</label>-->
+<!--    				      <div class="col-md-9">-->
+<!--    				        <input type="text" class="form-control" id="id_name" placeholder="Casa, Trabalho..." />-->
+<!--    				      </div>-->
+<!--    				    </div>-->
+<!--                        <div class="form-group">-->
+<!--    				      <label for="id_name" class="col-md-3 control-label">Logradouro</label>-->
+<!--    				      <div class="col-md-9">-->
+<!--    				        <input type="text" class="form-control" id="id_name" placeholder="Rua, Avenida..." />-->
+<!--    				      </div>-->
+<!--    				    </div>-->
+<!--                        <div class="form-group">-->
+<!--    				      <label for="id_name" class="col-md-3 control-label">Número</label>-->
+<!--    				      <div class="col-md-9">-->
+<!--    				        <input type="text" class="form-control" id="id_name" />-->
+<!--    				      </div>-->
+<!--    				    </div>-->
+<!--                        <div class="form-group">-->
+<!--    				      <label for="id_name" class="col-md-3 control-label">CEP</label>-->
+<!--    				      <div class="col-md-9">-->
+<!--    				        <input type="text" class="form-control" id="id_name" />-->
+<!--    				      </div>-->
+<!--    				    </div>-->
+<!--                        <div class="form-group">-->
+<!--    				      <div class="col-md-9 col-md-offset-3">-->
+<!--    				        <button type="submit" class="btn btn-primary">Próximo Passo</button>-->
+<!--    				      </div>-->
+<!--    				    </div>-->
+<!--                    </fieldset>-->
+<!--                </form>-->
+
+{%endblock%}

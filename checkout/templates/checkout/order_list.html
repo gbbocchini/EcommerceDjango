@@ -1,0 +1,62 @@
+{% extends 'accounts/indexaccounts.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Meus Pedidos{% endblock %}
+
+{% block accounts_container %}
+    <h2>Meus Pedidos</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Produtos
+                    </th>
+                    <th>
+                        Situação
+                    </th>
+                    <th>
+                        Data
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in object_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'checkout:order_detail' order.pk %}">#{{ order.pk }}</a>
+                    </td>
+                    <td>
+                        {% for product in order.products %}
+                            {{product.name}} {% if not forloop.last %}<br/>{% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {{order.get_status_display}}
+                    </td>
+                    <td>
+                        {{ order.created|date:"d/m/Y"}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<nav>
+			<ul class="pagination">
+				{% for page in paginator.page_range %}
+				<li{% if page_obj.number == page %} class="active"{%endif%}><a href="?page={{page}}">{{page}}</a></li>
+				{%endfor%}
+			</ul>
+		</nav>
+	</div>
+</div>
+</div>
+
+{% endblock %}
+
